@@ -16,26 +16,28 @@ const BeforeEach = () => {
 	const { setUser } = useUserContext();
 	const { decodedToken, isExpired } = useJwt(token || '');
 
-	const getMe = async (): Promise<void> => {
-		try {
-			const response = await userMe();
-			setUser(response.data.data);
-		} catch (e) {
-			const error = axiosErrorHandler(e);
-
-			removeAccessToken();
-			setUser({} as I_MeResBody['data']);
-			notification['error']({
-				message: 'Error',
-				description: error ? error.message : 'Authentication failed',
-				placement: 'bottom',
-			});
-		}
-	};
-
 	useEffect(() => {
-		if (decodedToken === null) return;
+		const getMe = async (): Promise<void> => {
+			try {
+				const response = await userMe();
+				setUser(response.data.data);
+			} catch (e) {
+				const error = axiosErrorHandler(e);
+				const description = error
+					? error.message
+					: 'Authentication failed';
 
+				removeAccessToken();
+				setUser({} as I_MeResBody['data']);
+				notification['error']({
+					message: 'User Authentication',
+					description,
+					placement: 'bottomRight',
+				});
+			}
+		};
+
+		if (decodedToken === null) return;
 		if (isExpired) {
 			removeAccessToken();
 			setUser({} as I_MeResBody['data']);
