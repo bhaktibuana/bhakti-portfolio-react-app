@@ -4,10 +4,10 @@ import { ThemeContext } from '@/stores/contexts';
 import { I_DefaultProviderProps } from '@/shared/interfaces';
 import { T_ThemeType } from '@/shared/types';
 import {
-	getLocalTheme,
 	getSystemTheme,
 	setAppTheme,
 	setLocalTheme,
+	initAppTheme,
 } from '@/shared/utils';
 
 const ThemeProvider: React.FC<I_DefaultProviderProps> = (props) => {
@@ -25,20 +25,7 @@ const ThemeProvider: React.FC<I_DefaultProviderProps> = (props) => {
 	};
 
 	const initTheme = () => {
-		const defaultTheme: T_ThemeType = getSystemTheme();
-		let localTheme = getLocalTheme();
-
-		if (localTheme) {
-			setTheme(localTheme as T_ThemeType);
-			if (localTheme === 'auto') {
-				localTheme = getSystemTheme();
-			}
-			setAppTheme(localTheme as T_ThemeType);
-		} else {
-			setLocalTheme(defaultTheme as T_ThemeType);
-			setTheme(defaultTheme as T_ThemeType);
-			setAppTheme(defaultTheme as T_ThemeType);
-		}
+		initAppTheme(setTheme);
 	};
 
 	return (

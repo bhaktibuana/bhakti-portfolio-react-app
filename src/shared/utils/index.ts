@@ -31,7 +31,10 @@ export const scrollTopTop = (): void => {
 const findLocalStorageKey = (name: string) => {
 	const localStorageKeys = Object.keys(localStorage);
 	return localStorageKeys.length > 0
-		? localStorageKeys.find((key) => aesDecrypt(key) === name)
+		? localStorageKeys.find((key) => {
+				const decryptedKey = aesDecrypt(key);
+				return decryptedKey !== null && decryptedKey === name;
+		  })
 		: undefined;
 };
 
@@ -144,4 +147,29 @@ export const setAppTheme = (theme: T_ThemeType) => {
 	const selectedTheme = APP_THEME.find((item) => item.key === theme);
 	document.body.classList.remove(...themeValue);
 	document.body.classList.add(selectedTheme?.value || '_theme-light');
+};
+
+/**
+ * Init app_theme
+ */
+export const initAppTheme = (
+	ctxThemeSetter:
+		| ((value: React.SetStateAction<T_ThemeType>) => void)
+		| null = null,
+) => {
+	const defaultTheme: T_ThemeType = getSystemTheme();
+	let localTheme = getLocalTheme();
+
+	if (localTheme) {
+		if (localTheme === 'auto') {
+			localTheme = getSystemTheme();
+		}
+		setAppTheme(localTheme as T_ThemeType);
+		if (ctxThemeSetter !== null) ctxThemeSetter(localTheme as T_ThemeType);
+	} else {
+		setLocalTheme(defaultTheme as T_ThemeType);
+		setAppTheme(defaultTheme as T_ThemeType);
+		if (ctxThemeSetter !== null)
+			ctxThemeSetter(defaultTheme as T_ThemeType);
+	}
 };

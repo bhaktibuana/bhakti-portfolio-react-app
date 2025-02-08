@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useJwt } from 'react-jwt';
 import { notification } from 'antd';
 
@@ -12,7 +12,7 @@ import { axiosErrorHandler } from '@/shared/helpers';
 const BeforeEach = () => {
 	const token = getAccessToken();
 
-	const navigate = useNavigate();
+	const location = useLocation();
 	const { initTheme } = useThemeContext();
 	const { setUser } = useUserContext();
 	const { decodedToken, isExpired } = useJwt(token || '');
@@ -49,7 +49,7 @@ const BeforeEach = () => {
 		} else {
 			getMe();
 		}
-	}, [navigate, decodedToken, isExpired, setUser]);
+	}, [location.pathname, decodedToken, isExpired, setUser]);
 
 	return null;
 };

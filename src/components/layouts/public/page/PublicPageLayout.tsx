@@ -4,7 +4,7 @@ import { withScreenLayout } from '@/components/layouts/screen';
 import { scrollTopTop } from '@/shared/utils';
 import { useScreenContext } from '@/stores/contexts';
 
-import './PublicPageLayout.scss';
+import '@/components/layouts/public/page/PublicPageLayout.scss';
 
 const PublicPageLayout = ({ children }: { children: ReactNode }) => {
 	const { type: screenType } = useScreenContext();

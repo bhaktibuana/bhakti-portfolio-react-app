@@ -7,6 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	background-color: var(--color-background-001);
+	color: var(--color-text-001);
 }
 
 ._public-page-container {
@@ -16,7 +17,7 @@
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	margin-top: 48px;
+	margin-top: 3rem;
 	margin-left: auto;
 	margin-right: auto;
 }
