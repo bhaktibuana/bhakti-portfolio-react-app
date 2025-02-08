@@ -18,24 +18,24 @@ const TopNavigation = () => {
 
 	return (
 		<>
-			<div className="top-nav-container">
-				<div className={`top-nav-wrapper ${screenType}`}>
-					{/* Left content */}
-					{screenType === 'desktop' && (
-						<Avatar
-							clickable
-							loading={true}
-							size={32}
-							src={avatarImage}
-							onClick={handleClickAvatar}
-						/>
-					)}
+		<div className="top-nav-container">
+			<div className={`top-nav-wrapper ${screenType}`}>
+				{/* Left content */}
+				{screenType === 'desktop' && (
+					<Avatar
+						clickable
+						loading={false}
+						size={32}
+						src={avatarImage}
+						onClick={handleClickAvatar}
+					/>
+				)}
 
-					{/* Mid content */}
+				{/* Mid content */}
 
-					{/* Right content */}
-				</div>
+				{/* Right content */}
 			</div>
+		</div>
 		</>
 	);
 };
