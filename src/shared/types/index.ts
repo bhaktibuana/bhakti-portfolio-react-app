@@ -5,6 +5,8 @@ import { I_Router } from '@/shared/interfaces';
  */
 export type T_ThemeType = 'auto' | 'light' | 'dark';
 
+export type T_ScreenType = 'desktop' | 'mobile';
+
 /**
  * Router Types
  */

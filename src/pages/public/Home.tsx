@@ -1,11 +1,15 @@
 import React from 'react';
 
+import { withPublicPageLayout } from '@/components/layouts/public/page';
+
 const Home = () => {
 	return (
 		<>
-        <div>Home page</div>
+			<div>Home page</div>
 		</>
 	);
 };
 
-export default Home;
+const Component = withPublicPageLayout(Home);
+
+export default Component;

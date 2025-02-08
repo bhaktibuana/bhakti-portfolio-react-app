@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { T_ThemeType } from '@/shared/types';
+import { T_ScreenType, T_ThemeType } from '@/shared/types';
 
 /**
  * Provider Interfaces
@@ -21,6 +21,18 @@ export interface I_ThemeContext {
 	theme: T_ThemeType;
 	setTheme: (value: T_ThemeType) => void;
 	initTheme: () => void;
+}
+
+export interface I_ScreenContext {
+	type: T_ScreenType;
+	size: I_ScreenSize;
+	setType: (value: T_ScreenType) => void;
+	setSize: (value: I_ScreenSize) => void;
+}
+
+export interface I_ScreenSize {
+	width: number;
+	height: number;
 }
 
 /**
