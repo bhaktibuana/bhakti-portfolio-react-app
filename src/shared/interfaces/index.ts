@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 
+import { T_ThemeType } from '@/shared/types';
+
 /**
  * Provider Interfaces
  */
@@ -13,6 +15,12 @@ export interface I_DefaultProviderProps {
 export interface I_UserContext {
 	user: I_MeResBody['data'];
 	setUser: (value: I_MeResBody['data']) => void;
+}
+
+export interface I_ThemeContext {
+	theme: T_ThemeType;
+	setTheme: (value: T_ThemeType) => void;
+	initTheme: () => void;
 }
 
 /**

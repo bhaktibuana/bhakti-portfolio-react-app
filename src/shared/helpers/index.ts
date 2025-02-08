@@ -7,7 +7,12 @@ import { APP_KEY } from '@/shared/constants';
  * Crypto Helpers
  */
 export const aesEncrypt = (payload: string) => {
-	return CryptoJS.AES.encrypt(payload, APP_KEY).toString();
+	const IV = CryptoJS.enc.Hex.parse('00000000000000000000000000000000');
+	return CryptoJS.AES.encrypt(payload, CryptoJS.enc.Utf8.parse(APP_KEY), {
+		iv: IV,
+		mode: CryptoJS.mode.CBC,
+		padding: CryptoJS.pad.Pkcs7,
+	}).toString();
 };
 
 export const aesDecrypt = (payload: string) => {

@@ -4,7 +4,7 @@ import { useJwt } from 'react-jwt';
 import { notification } from 'antd';
 
 import { getAccessToken, removeAccessToken } from '@/shared/utils';
-import { useUserContext } from '@/stores/contexts';
+import { useThemeContext, useUserContext } from '@/stores/contexts';
 import { I_MeResBody } from '@/shared/interfaces';
 import { userMe } from '@/apis/user';
 import { axiosErrorHandler } from '@/shared/helpers';
@@ -13,8 +13,13 @@ const BeforeEach = () => {
 	const token = getAccessToken();
 
 	const navigate = useNavigate();
+	const { initTheme } = useThemeContext();
 	const { setUser } = useUserContext();
 	const { decodedToken, isExpired } = useJwt(token || '');
+
+	useEffect(() => {
+		initTheme();
+	}, [initTheme]);
 
 	useEffect(() => {
 		const getMe = async (): Promise<void> => {

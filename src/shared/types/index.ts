@@ -1,6 +1,11 @@
 import { I_Router } from '@/shared/interfaces';
 
 /**
+ * Context Interfaces
+ */
+export type T_ThemeType = 'auto' | 'light' | 'dark';
+
+/**
  * Router Types
  */
 export type T_Routers = I_Router[];

@@ -1,0 +1,10 @@
+._public-page-container {
+	width: 100%;
+	max-width: 100vw;
+	height: auto;
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-background-001);
+}

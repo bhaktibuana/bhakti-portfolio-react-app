@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { AuthProvider } from '@/stores/providers';
 import { I_DefaultProviderProps } from '@/shared/interfaces';
+import { AuthProvider, ThemeProvider } from '@/stores/providers';
 
 const MultiProvider: React.FC<I_DefaultProviderProps> = (props) => {
-	const providers = [AuthProvider];
+	const providers = [AuthProvider, ThemeProvider];
 
 	return providers.reduceRight((child, Provider) => {
 		return <Provider>{child}</Provider>;
