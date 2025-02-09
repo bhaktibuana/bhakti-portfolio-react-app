@@ -15,3 +15,36 @@ export const APP_THEME = [
 		value: '_theme-dark',
 	},
 ];
+
+export const APP_THEME_OPTIONS = [
+	{
+		key: 'auto',
+		label: 'Automatic',
+	},
+	{
+		key: 'light',
+		label: 'Light',
+	},
+	{
+		key: 'dark',
+		label: 'Dark',
+	},
+];
+
+export const PUBLIC_NAV_MENU_ITEMS = [
+	{
+		label: 'Home',
+		to: '/',
+		active: false,
+	},
+	{
+		label: 'About',
+		to: '/about',
+		active: false,
+	},
+	{
+		label: 'Blog',
+		to: '/blog',
+		active: false,
+	},
+];

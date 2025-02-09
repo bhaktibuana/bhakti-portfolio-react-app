@@ -63,3 +63,12 @@ button.icon-button {
 	align-items: center;
 	color: var(--color-text-001);
 }
+
+.top-nav-menu-wrapper {
+	height: 2rem;
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+}

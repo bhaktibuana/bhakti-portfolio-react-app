@@ -1,0 +1,47 @@
+.top-nav-menu-button {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.85rem;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	margin: 0;
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--color-text-002);
+	border: none;
+	outline: none;
+	border-radius: 99999px;
+	cursor: pointer;
+	transition: 0.2s all ease;
+	background-color: transparent;
+
+	&:hover {
+		color: var(--color-text-001);
+	}
+
+	&:disabled {
+		color: var(--color-text-002);
+		cursor: default;
+
+		&:hover {
+			color: var(--color-text-002);
+		}
+	}
+
+	&.active {
+		background-color: var(--color-background-003);
+		color: var(--color-text-001);
+	}
+
+	&.disabled {
+		color: var(--color-text-002);
+		cursor: default;
+
+		&:hover {
+			color: var(--color-text-002);
+		}
+	}
+}

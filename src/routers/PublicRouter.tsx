@@ -2,6 +2,8 @@ import { I_Router } from '@/shared/interfaces';
 import Public from '@/routers/middlewares/Public';
 
 import Home from '@/pages/public/Home';
+import About from '@/pages/public/About';
+import Blog from '@/pages/public/Blog';
 
 export const publicRouter = {
 	id: 'public-router',
@@ -11,6 +13,16 @@ export const publicRouter = {
 			id: 'home-router',
 			path: '/',
 			element: <Home />,
+		},
+		{
+			id: 'about-router',
+			path: '/about',
+			element: <About />,
+		},
+		{
+			id: 'blog-router',
+			path: '/blog',
+			element: <Blog />,
 		},
 	],
 } as I_Router;

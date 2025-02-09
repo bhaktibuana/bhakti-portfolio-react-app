@@ -2,18 +2,16 @@ import React from 'react';
 
 import { withPublicPageLayout } from '@/components/layouts/public/page';
 
-const Home = () => {
+const Blog = () => {
 	return (
 		<>
 		<div>
-			<span>Bhakti Mega Buana</span>
-			<br />
-			<span>I develop & automate Web3 solutions</span>
+			<span>Blog Page</span>
 		</div>
 		</>
 	);
 };
 
-const Component = withPublicPageLayout(Home);
+const Component = withPublicPageLayout(Blog);
 
 export default Component;
