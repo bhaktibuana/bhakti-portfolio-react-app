@@ -16,3 +16,8 @@ export type T_Routers = I_Router[];
  * API Types
  */
 export type T_ApiUrlType = 'app';
+
+/**
+ * Icon Types
+ */
+export type T_IconName = 'sun-filled' | 'moon-filled' | 'check';

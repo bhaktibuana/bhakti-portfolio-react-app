@@ -24,6 +24,12 @@ const AntdConfigProvider: React.FC<I_DefaultProviderProps> = (props) => {
 						gradientToColor:
 							colors['skeleton-gradient-to-color'],
 					},
+					Dropdown: {
+						colorText: colors['color-text-001'],
+						colorBgElevated: colors['color-background-004'],
+						controlItemBgHover: colors['color-background-003'],
+						controlPaddingHorizontal: 12,
+					},
 				},
 			}}
 		>

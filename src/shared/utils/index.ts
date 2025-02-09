@@ -161,11 +161,11 @@ export const initAppTheme = (
 	let localTheme = getLocalTheme();
 
 	if (localTheme) {
+		if (ctxThemeSetter !== null) ctxThemeSetter(localTheme as T_ThemeType);
 		if (localTheme === 'auto') {
 			localTheme = getSystemTheme();
 		}
 		setAppTheme(localTheme as T_ThemeType);
-		if (ctxThemeSetter !== null) ctxThemeSetter(localTheme as T_ThemeType);
 	} else {
 		setLocalTheme(defaultTheme as T_ThemeType);
 		setAppTheme(defaultTheme as T_ThemeType);

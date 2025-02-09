@@ -1,0 +1,14 @@
+.dropdown-child-wrapper {
+	cursor: pointer;
+}
+
+.ant-dropdown-menu {
+	padding: 0.5rem !important;
+	border-radius: 0.75rem !important;
+	backdrop-filter: blur(12px) !important;
+}
+
+.ant-dropdown-menu-item {
+	font-weight: 500 !important;
+	border-radius: 0.375rem !important;
+}

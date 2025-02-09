@@ -5,7 +5,11 @@ import { withPublicPageLayout } from '@/components/layouts/public/page';
 const Home = () => {
 	return (
 		<>
-			<div>Home page</div>
+			<div>
+				<span>Bhakti Mega Buana</span>
+				<br />
+				<span>I develop & automate Web3 solutions</span>
+			</div>
 		</>
 	);
 };
