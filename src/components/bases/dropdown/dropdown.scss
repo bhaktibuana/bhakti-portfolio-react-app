@@ -1,3 +1,7 @@
+.ant-dropdown-trigger {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .dropdown-child-wrapper {
 	cursor: pointer;
 }
@@ -11,4 +15,6 @@
 .ant-dropdown-menu-item {
 	font-weight: 500 !important;
 	border-radius: 0.375rem !important;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
 }

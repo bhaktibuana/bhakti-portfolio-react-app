@@ -15,7 +15,16 @@ export default defineConfig({
 	},
 	css: {
 		preprocessorOptions: {
-			scss: {},
+			scss: {
+				sourceMapContents: false,
+				additionalData(source) {
+					let prepends = '';
+					prepends += `@use "@/assets/styles/screen" as *;`;
+					prepends += source;
+
+					return prepends;
+				},
+			},
 		},
 	},
 });

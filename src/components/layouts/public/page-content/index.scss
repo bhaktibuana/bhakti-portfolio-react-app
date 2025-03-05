@@ -1,0 +1,30 @@
+.public-page-content-section {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	gap: 2.25rem;
+
+	@include breakpoint(md, max) {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	h2.content-section-title {
+		font-size: inherit;
+		font-weight: 500;
+		color: var(--color-text-002);
+		line-height: 1.5;
+		margin: 0;
+		min-width: 7rem;
+		text-align: left;
+
+		&.align-right {
+			text-align: right;
+		}
+	}
+
+	&.disabled {
+		filter: opacity(0.5);
+	}
+}

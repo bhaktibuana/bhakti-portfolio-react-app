@@ -1,9 +1,9 @@
 import { I_Router } from '@/shared/interfaces';
 import Public from '@/routers/middlewares/Public';
 
-import Home from '@/pages/public/Home';
-import About from '@/pages/public/About';
-import Blog from '@/pages/public/Blog';
+import Home from '@/pages/public/home/Home';
+import About from '@/pages/public/about/About';
+import Blog from '@/pages/public/blog/Blog';
 
 export const publicRouter = {
 	id: 'public-router',
